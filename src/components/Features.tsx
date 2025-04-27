@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { Button } from '@/components/ui/button';
 
 const Features = () => {
   const features = [
@@ -8,10 +8,14 @@ const Features = () => {
       title: "Go Live Instantly",
       description: "Start streaming with a single tap. Reach your audience in real-time and interact with viewers like never before.",
       icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-sambow-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <circle cx="12" cy="12" r="8" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
+        <div className="relative w-12 h-12">
+          <div className="absolute inset-0 bg-gradient-to-r from-sambow-pink to-sambow-purple rounded-xl rotate-6"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-sambow-teal to-sambow-pink rounded-xl"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 relative text-white p-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <circle cx="12" cy="12" r="8" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
       )
     },
     {
@@ -49,20 +53,30 @@ const Features = () => {
   ];
 
   return (
-    <section id="features" className="section-container">
-      <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Features That <span className="gradient-text">Set Us Apart</span></h2>
-        <p className="text-white/70 max-w-2xl mx-auto">Discover what makes Sambow the next generation social media platform everyone's talking about.</p>
-      </div>
+    <section id="features" className="section-container relative">
+      <div className="absolute inset-0 bg-gradient-to-b from-sambow-darker via-sambow-dark to-sambow-darker"></div>
+      
+      <div className="relative z-10">
+        <div className="text-center mb-16">
+          <p className="text-sambow-teal font-semibold mb-4">FEATURES</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Features That <span className="gradient-text">Set Us Apart</span></h2>
+          <p className="text-white/70 max-w-2xl mx-auto">Discover what makes Sambow the next generation social media platform everyone's talking about.</p>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {features.map((feature) => (
-          <div key={feature.id} className="feature-card">
-            <div className="mb-4">{feature.icon}</div>
-            <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-            <p className="text-white/70">{feature.description}</p>
-          </div>
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {features.map((feature) => (
+            <div 
+              key={feature.id} 
+              className="group bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:bg-white/10 hover:scale-[1.02] hover:shadow-xl hover:shadow-sambow-pink/10"
+            >
+              <div className="mb-6 transform transition-transform duration-300 group-hover:scale-110">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-bold mb-3 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">{feature.title}</h3>
+              <p className="text-white/70 leading-relaxed">{feature.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
