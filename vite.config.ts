@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/sambow-splash-page/", // Add this line for GitHub Pages
+  base: "/sambow-splash-page/", // Base path for GitHub Pages
   plugins: [
     react(),
     mode === 'development' &&
