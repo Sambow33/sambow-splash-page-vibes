@@ -30,7 +30,7 @@ const Hero = () => {
             </h1>
             <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
               Stream live, discover trending videos, and connect with a global community.
-              All in one place, anytime, anywhere.
+              Turn your passion into income with our creator-focused platform.
             </p>
           </div>
           
